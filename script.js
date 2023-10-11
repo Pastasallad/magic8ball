@@ -13,7 +13,7 @@ const predictions = [
     "Ask again later",
     "Better not tell you now",
     "Cannot predict now",
-    "Concentrate and ask<br>again",
+    "Concentrate and ask again",
     "Don't count on it",
     "My reply is no",
     "My sources say no",
@@ -22,5 +22,5 @@ const predictions = [
 ];
 
 function getPrediction() {
-    return '<p class="w3-animate-zoom">' + predictions[Math.floor(Math.random()*predictions.length)] + '</p>';
+    return '<p>' + predictions[Math.floor(Math.random()*predictions.length)] + '</p>';
 }
