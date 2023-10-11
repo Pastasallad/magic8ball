@@ -1,0 +1,26 @@
+.ball {
+    cursor: pointer;
+    max-height: 500px;
+    aspect-ratio: 1/1;
+    -webkit-tap-highlight-color: transparent;
+    box-shadow:
+        0 0 7px #fff,
+      0 0 10px #ccc,
+      0 0 42px #9c27b0
+}
+.ball-window {
+    background-color:#00001a;
+    position:relative;
+    height: 50%; 
+    width: 50%;
+    top:25%;
+    left:25%;
+}
+.neon-text {
+    position: relative;
+    color: #ccc;
+    text-shadow:
+      0 0 7px #ccc,
+      0 0 21px #9c27b0,
+      0 0 42px #9c27b0;
+  }

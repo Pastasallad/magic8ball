@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic 8 Ball</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="w3.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body class="w3-black">
+    <header class="w3-container w3-dark-gray">
+        <h1>Magic <img src="logo.svg" alt="8Ball" style="height: 1.5em;"> Ball</h1>
+    </header>
+    <section class="w3-container w3-center">
+            <div class="w3-black w3-circle ball" onclick="document.getElementById('answer').innerHTML = getPrediction();">
+                <div class="w3-circle w3-display-container ball-window" style="background-color:#00001a;position:relative;height: 50%; width: 50%;top:25%;left:25%;">
+                    <div id="answer" class="w3-display-middle w3-center w3-large neon-text"><p>?</p></div>
+                </div>
+        </div>
+    </section>
+    <footer class="w3-container w3-bottom w3-center">HRMS.se</footer>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js');
+        }
+    </script>
+</body>
+</html>
