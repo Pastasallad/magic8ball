@@ -1,26 +1,40 @@
 const predictions = [
-    "It is certain",
-    "It is decidedly so",
-    "Without a doubt",
-    "Yes definitely",
-    "You may rely on it",
-    "As I see it, yes",
-    "Most likely",
-    "Outlook good",
-    "Yes",
-    "Signs point to yes",
-    "Reply hazy, try again",
-    "Ask again later",
-    "Better not tell you now",
-    "Cannot predict now",
-    "Concentrate and ask again",
-    "Don't count on it",
-    "My reply is no",
-    "My sources say no",
-    "Outlook not so good",
-    "Very doubtful"
+    ["It is certain",2],
+    ["It is decidedly so",2],
+    ["Without a doubt",2],
+    ["Yes definitely",2],
+    ["You may rely on it",2],
+    ["As I see it, yes",2],
+    ["Most likely",2],
+    ["Outlook good",2],
+    ["Yes",2],
+    ["Signs point to yes",2],
+    ["Reply hazy, try again",1],
+    ["Ask again later",1],
+    ["Better not tell you now",1],
+    ["Cannot predict now",1],
+    ["Concentrate and ask again",1],
+    ["Don't count on it",0],
+    ["My reply is no",0],
+    ["My sources say no",0],
+    ["Outlook not so good",0],
+    ["Very doubtful",0]
 ];
 
 function getPrediction() {
-    return '<p>' + predictions[Math.floor(Math.random()*predictions.length)] + '</p>';
+    const i = Math.floor(Math.random()*predictions.length);
+    let style;
+    switch (predictions[i][1]) {
+        case 0:
+            style = 'ball-red';
+            break;
+        case 1:
+            style = 'ball-amber';
+            break;
+        case 2:
+            style = 'ball-green';
+            break;
+    }
+    document.getElementById('ball').classList = style;
+    return '<p>' + predictions[i][0] + '</p>';
 }

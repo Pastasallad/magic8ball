@@ -36,6 +36,10 @@ svg {filter: drop-shadow(0 0 7px #9c27b0);}
         0 0 6px #ccc,
         0 0 25px #9c27b0;
 }
+.ball-green { box-shadow: 0 0 6px #ccc, 0 0 25px rgba(0,255,0,.5) !important; }
+.ball-amber { box-shadow: 0 0 6px #ccc, 0 0 25px rgba(255,255,0,.5) !important; }
+.ball-red { box-shadow: 0 0 6px #ccc, 0 0 25px rgba(255,0,0,.7) !important; }
+
 #window {
     background-color:#00001a;
     height: 50%;
