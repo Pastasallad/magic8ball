@@ -1,5 +1,11 @@
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('service-worker.js');
+    window.addEventListener('load', async () => {
+      try {
+        let reg = await navigator.serviceWorker.register('service-worker.js');
+      } catch (err) {
+        console.log('😥 Service worker registration failed: ', err);
+      }
+    });
 }
 
 const predictions = [
@@ -58,11 +64,4 @@ btn.onclick = function() {
     if (event.target == modal) {
       modal.style.display = "none";
     }
-  }
-  function loadSettings() {
-      saveMail.value = localStorage.getItem('email');
-  }
-  function saveSettings() {
-      localStorage.setItem('email',saveMail.value);
-      saveMail.classList = 'saved';
   }

@@ -1,8 +1,19 @@
-importScripts(
-    'https://storage.googleapis.com/workbox-cdn/releases/6.4.1/workbox-sw.js'
-    );
+const cacheName = 'cache-1';
+const precacheResources = ['index.html', 'style.css', 'script.js', 'manifest.json'];
+self.addEventListener('install', (event) => {
+  event.waitUntil(caches.open(cacheName).then((cache) => cache.addAll(precacheResources)));
+});
 
-workbox.routing.registerRoute(
-    ({request}) => request.destination === 'image',
-    new workbox.strategies.NetworkFirst()
-);
+self.addEventListener('activate', (event) => {
+});
+
+self.addEventListener('fetch', (event) => {
+  event.respondWith(
+    caches.match(event.request).then((cachedResponse) => {
+      if (cachedResponse) {
+        return cachedResponse;
+      }
+      return fetch(event.request);
+    }),
+  );
+});
