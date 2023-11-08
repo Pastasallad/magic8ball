@@ -1,3 +1,7 @@
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js');
+}
+
 const predictions = [
     ["It is certain",2],
     ["It is decidedly so",2],
@@ -38,3 +42,27 @@ function getPrediction() {
     document.getElementById('ball').classList = style;
     return '<p>' + predictions[i][0] + '</p>';
 }
+
+const btn = document.getElementsByTagName('button')[0];
+const span = document.getElementsByClassName('close')[0];
+const modal = document.getElementById('modal');
+// Modal
+btn.onclick = function() {
+    modal.style.display = "block";
+  }
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+  function loadSettings() {
+      saveMail.value = localStorage.getItem('email');
+  }
+  function saveSettings() {
+      localStorage.setItem('email',saveMail.value);
+      saveMail.classList = 'saved';
+  }
