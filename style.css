@@ -6,7 +6,7 @@ body {
     margin: 0 5px;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: auto 1fr;
     height: 100vh;
     user-select: none;
 }
